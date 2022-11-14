@@ -1,10 +1,10 @@
-import { throttle } from "lodash";
+import { throttle } from 'lodash';
 
-const formEl = document.querySelector(".feedback-form");
-const FORM_KEY = "feedback-form-state";
+const formEl = document.querySelector('.feedback-form');
+const FORM_KEY = 'feedback-form-state';
 
-formEl.addEventListener("input", throttle(onFormInput, 500));
-formEl.addEventListener("submit", onFormSubmit);
+formEl.addEventListener('input', throttle(onFormInput, 500));
+formEl.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(event) {
   event.preventDefault();
@@ -34,9 +34,8 @@ function onFormInput(event) {
 const renderData = () => {
   let dataToRender = JSON.parse(localStorage.getItem(FORM_KEY)) ?? {};
   const inputNames = Object.keys(dataToRender);
-  inputNames.forEach((inputName) => {
+  inputNames.forEach(inputName => {
     let input = formEl.elements[inputName];
-    input.type = "value";
   });
 };
 renderData();
