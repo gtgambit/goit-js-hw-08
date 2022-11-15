@@ -36,6 +36,7 @@ const renderData = () => {
   const inputNames = Object.keys(dataToRender);
   inputNames.forEach(inputName => {
     let input = formEl.elements[inputName];
+    input.type = value;
   });
 };
 renderData();
